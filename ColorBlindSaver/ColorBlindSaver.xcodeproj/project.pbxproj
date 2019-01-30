@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A41CD953220231FB0074D424 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41CD952220231FB0074D424 /* UIColor.swift */; };
 		A4693CFB21FE54C500ABE0A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4693CFA21FE54C500ABE0A4 /* AppDelegate.swift */; };
 		A4693CFD21FE54C500ABE0A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4693CFC21FE54C500ABE0A4 /* ViewController.swift */; };
 		A4693D0021FE54C500ABE0A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4693CFE21FE54C500ABE0A4 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A41CD952220231FB0074D424 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		A4693CF721FE54C500ABE0A4 /* ColorBlindSaver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorBlindSaver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4693CFA21FE54C500ABE0A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4693CFC21FE54C500ABE0A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				A4693D0121FE54C700ABE0A4 /* Assets.xcassets */,
 				A4693D0321FE54C700ABE0A4 /* LaunchScreen.storyboard */,
 				A4693D0621FE54C700ABE0A4 /* Info.plist */,
+				A41CD952220231FB0074D424 /* UIColor.swift */,
 			);
 			path = ColorBlindSaver;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4693CFD21FE54C500ABE0A4 /* ViewController.swift in Sources */,
+				A41CD953220231FB0074D424 /* UIColor.swift in Sources */,
 				A4693CFB21FE54C500ABE0A4 /* AppDelegate.swift in Sources */,
 				A4693D2021FE5A3500ABE0A4 /* OpenCVWrapper.mm in Sources */,
 			);

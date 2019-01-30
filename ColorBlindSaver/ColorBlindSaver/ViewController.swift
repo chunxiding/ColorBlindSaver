@@ -8,29 +8,6 @@
 
 import UIKit
 
-extension UIColor {
-    
-    func rgb() -> String? {
-        var fRed : CGFloat = 0
-        var fGreen : CGFloat = 0
-        var fBlue : CGFloat = 0
-        var fAlpha: CGFloat = 0
-        if self.getRed(&fRed, green: &fGreen, blue: &fBlue, alpha: &fAlpha) {
-            let iRed = Int(fRed * 255.0)
-            let iGreen = Int(fGreen * 255.0)
-            let iBlue = Int(fBlue * 255.0)
-            let iAlpha = Int(fAlpha * 255.0)
-            
-            //let rgb = (iAlpha << 24) + (iRed << 16) + (iGreen << 8) + iBlue
-            let rgb = String(iRed) + "," + String(iGreen) + "," + String(iBlue) + "," + String(iAlpha)
-            return rgb
-        } else {
-            // Could not extract RGBA components:
-            return nil
-        }
-    }
-}
-
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
@@ -42,6 +19,17 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         self.present(imageController, animated: true, completion: nil)
         
     }
+    
+    @IBAction func takePicture(_ sender: UIButton) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerController.SourceType.camera
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         imageView.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         self.dismiss(animated: true, completion: nil)
@@ -79,8 +67,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         if imageView.image == UIImage(named:"test.png") {
             onTapResult.text = ""
         } else {
+            onTapResult.text = ""
             let result = getPixelColor(imageView.image!, sender.location(in: imageView))
-            onTapResult.text = result.rgb()
+            onTapResult.text = result.colorname()
         }
     }
     
@@ -89,5 +78,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         // Do any additional setup after loading the view, typically from a nib.
         imageView.isUserInteractionEnabled = true
         imageView.image = UIImage(named:"test.png")
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
 }
